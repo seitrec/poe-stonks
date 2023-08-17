@@ -1,0 +1,41 @@
+{
+    "viz": "timeseries",
+    "requests": [
+        {
+            "style": {
+                "palette": "dog_classic",
+                "type": "solid",
+                "width": "normal"
+            },
+            "type": "line",
+            "formulas": [
+                {
+                    "formula": "(+2*query2+3*query3+5*query4-50*query1)"
+                }
+            ],
+            "queries": [
+                {
+                    "name": "query1",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:surveyor_s_compass}"
+                },
+                {
+                    "name": "query2",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:deception_contract,ilvl:83}"
+                },
+                {
+                    "name": "query3",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:deception_contract,ilvl:_83}"
+                },
+                {
+                    "name": "query4",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:demolition_contract,ilvl:83}"
+                }
+            ],
+            "response_format": "timeseries"
+        }
+    ]
+}

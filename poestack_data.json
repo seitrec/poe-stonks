@@ -1,0 +1,1087 @@
+{
+    "contract": {
+        "deception contract": {
+            "ilvl:83+": 7,
+            "ilvl:<83": 7.8125
+        },
+        "lockpicking contract": {
+            "ilvl:83+": 2.518181818181818,
+            "ilvl:<83": 2.0375
+        },
+        "brute force contract": {
+            "ilvl:83+": 2.15,
+            "ilvl:<83": 1.3
+        },
+        "trap disarmament contract": {
+            "ilvl:83+": 2.436666666666667,
+            "ilvl:<83": 2.18
+        },
+        "perception contract": {
+            "ilvl:83+": 3,
+            "ilvl:<83": 5
+        },
+        "counter-thaumaturgy contract": {
+            "ilvl:83+": 2.886666666666666,
+            "ilvl:<83": 2.766666666666667
+        },
+        "demolition contract": {
+            "ilvl:83+": 2.15,
+            "ilvl:<83": 1.018181818181818
+        },
+        "engineering contract": {
+            "ilvl:<83": 1.6125,
+            "ilvl:83+": 2
+        },
+        "agility contract": {
+            "ilvl:83+": 2.11875,
+            "ilvl:<83": 1.58
+        }
+    },
+    "blueprint": {
+        "unusual gems blueprint": {
+            "fullyRevealed:True,ilvl:81+,totalWings:4": 110.65,
+            "fullyRevealed:True,ilvl:<81,totalWings:4": 95.8,
+            "fullyRevealed:True,ilvl:81+,totalWings:3": 62.35,
+            "fullyRevealed:True,ilvl:<81,totalWings:3": 46.02,
+            "fullyRevealed:True,ilvl:<81,totalWings:2": 37.74,
+            "fullyRevealed:False,ilvl:81+,totalWings:4": 31,
+            "fullyRevealed:False,ilvl:<81,totalWings:4": 15.01,
+            "fullyRevealed:False,ilvl:81+,totalWings:3": 21.91666666666667,
+            "fullyRevealed:False,ilvl:<81,totalWings:2": 10,
+            "fullyRevealed:False,ilvl:<81,totalWings:3": 11.39090909090909
+        },
+        "enchanted armaments blueprint": {
+            "fullyRevealed:True,ilvl:81+,totalWings:4": 63.37272727272727,
+            "fullyRevealed:True,ilvl:<81,totalWings:4": 62,
+            "fullyRevealed:True,ilvl:81+,totalWings:3": 40,
+            "fullyRevealed:True,ilvl:<81,totalWings:3": 40.75,
+            "fullyRevealed:True,ilvl:<81,totalWings:2": 21.89,
+            "fullyRevealed:False,ilvl:81+,totalWings:4": 6.590000000000001,
+            "fullyRevealed:False,ilvl:81+,totalWings:3": 5.872727272727274,
+            "fullyRevealed:False,ilvl:<81,totalWings:2": 2,
+            "fullyRevealed:False,ilvl:<81,totalWings:4": 3,
+            "fullyRevealed:False,ilvl:<81,totalWings:3": 2
+        },
+        "replicas or experimented items blueprint": {
+            "fullyRevealed:True,ilvl:81+,totalWings:4": 70.32000000000001,
+            "fullyRevealed:True,ilvl:<81,totalWings:4": 64.75,
+            "fullyRevealed:True,ilvl:81+,totalWings:3": 45,
+            "fullyRevealed:True,ilvl:<81,totalWings:3": 39.23,
+            "fullyRevealed:True,ilvl:<81,totalWings:2": 24.92727272727273,
+            "fullyRevealed:False,ilvl:81+,totalWings:4": 9.7125,
+            "fullyRevealed:False,ilvl:81+,totalWings:3": 12.785,
+            "fullyRevealed:False,ilvl:<81,totalWings:4": 3,
+            "fullyRevealed:False,ilvl:<81,totalWings:3": 3,
+            "fullyRevealed:False,ilvl:<81,totalWings:2": 3
+        },
+        "thieves' trinkets or currency blueprint": {
+            "fullyRevealed:True,ilvl:81+,totalWings:4": 70,
+            "fullyRevealed:True,ilvl:<81,totalWings:4": 64.27272727272727,
+            "fullyRevealed:True,ilvl:81+,totalWings:3": 66,
+            "fullyRevealed:True,ilvl:<81,totalWings:3": 35.22727272727273,
+            "fullyRevealed:True,ilvl:<81,totalWings:2": 24.8811,
+            "fullyRevealed:False,ilvl:<81,totalWings:4": 3,
+            "fullyRevealed:False,ilvl:81+,totalWings:3": 11.5,
+            "fullyRevealed:False,ilvl:81+,totalWings:4": 10.5,
+            "fullyRevealed:False,ilvl:<81,totalWings:2": 3,
+            "fullyRevealed:False,ilvl:<81,totalWings:3": 3
+        }
+    },
+    "currency": {
+        "mirror of kalandra": {
+            "": 57280.52
+        },
+        "mirror shard": {
+            "": 2860
+        },
+        "fracturing orb": {
+            "": 1896.615
+        },
+        "tempering orb": {
+            "": 903.7896499999999
+        },
+        "tainted divine teardrop": {
+            "": 279.4228
+        },
+        "blessing of chayula": {
+            "": 250.9824
+        },
+        "tailoring orb": {
+            "": 230.86872
+        },
+        "secondary regrading lens": {
+            "": 212.3404113454545
+        },
+        "divine orb": {
+            "": 222.5181818181818
+        },
+        "hunter's exalted orb": {
+            "": 221.925
+        },
+        "orb of dominance": {
+            "": 191.1189666666667
+        },
+        "sacred crystallised lifeforce": {
+            "": 104.7316666666667
+        },
+        "prime regrading lens": {
+            "": 107.2003095975233
+        },
+        "fracturing shard": {
+            "": 67.9198717948718
+        },
+        "blessing of tul": {
+            "": 85
+        },
+        "blessing of esh": {
+            "": 84.58
+        },
+        "blessing of xoph": {
+            "": 84.77000000000001
+        },
+        "elevated sextant": {
+            "": 78.50645161290322
+        },
+        "blessing of uul-netol": {
+            "": 70
+        },
+        "sacred orb": {
+            "": 73.33333333333334
+        },
+        "orb of conflict": {
+            "": 44
+        },
+        "redeemer's exalted orb": {
+            "": 55
+        },
+        "tainted blessing": {
+            "": 98.10000000000001
+        },
+        "crusader's exalted orb": {
+            "": 43.96458585858586
+        },
+        "warlord's exalted orb": {
+            "": 46.79777777777778
+        },
+        "eldritch chaos orb": {
+            "": 30.66666666666667
+        },
+        "awakener's orb": {
+            "": 27.5
+        },
+        "exceptional eldritch ichor": {
+            "": 27.5
+        },
+        "eldritch orb of annulment": {
+            "": 27.5
+        },
+        "exceptional eldritch ember": {
+            "": 23.75222476481058
+        },
+        "tainted orb of fusing": {
+            "": 27.5
+        },
+        "tainted exalted orb": {
+            "": 43.77666666666667
+        },
+        "tainted mythic orb": {
+            "": 24.53267331060406
+        },
+        "exalted orb": {
+            "": 14.66666666666667
+        },
+        "eldritch exalted orb": {
+            "": 14.66666666666667
+        },
+        "oil extractor": {
+            "": 10.41476190476191
+        },
+        "ancient orb": {
+            "": 9.565217391304346
+        },
+        "veiled chaos orb": {
+            "": 10
+        },
+        "awakened sextant": {
+            "": 5.789473684210527
+        },
+        "ritual vessel": {
+            "": 10.45551406926407
+        },
+        "tainted chaos orb": {
+            "": 21.3
+        },
+        "orb of annulment": {
+            "": 5.238095238095239
+        },
+        "grand eldritch ichor": {
+            "": 4.399999999999999
+        },
+        "tainted chromatic orb": {
+            "": 4
+        },
+        "grand eldritch ember": {
+            "": 4.399999999999999
+        },
+        "surveyor's compass": {
+            "": 3
+        },
+        "stacked deck": {
+            "": 2.2
+        },
+        "harbinger's orb": {
+            "": 1.436544048292774
+        },
+        "exalted shard": {
+            "": 4.52
+        },
+        "annulment shard": {
+            "": 1.0046875
+        },
+        "tainted jeweller's orb": {
+            "": 1
+        },
+        "chaos orb": {
+            "": 0.9779313131313131
+        },
+        "greater eldritch ember": {
+            "": 0.9800793600054412
+        },
+        "greater eldritch ichor": {
+            "": 0.9093521118670956
+        },
+        "orb of unmaking": {
+            "": 0.8461538461538465
+        },
+        "orb of scouring": {
+            "": 0.7334484848484849
+        },
+        "tainted armourer's scrap": {
+            "": 0.7709436627434323
+        },
+        "regal orb": {
+            "": 0.6666666666666667
+        },
+        "gemcutter's prism": {
+            "": 0.5945945945945946
+        },
+        "vaal orb": {
+            "": 0.4433431325669912
+        },
+        "blessed orb": {
+            "": 0.4782608695652174
+        },
+        "orb of regret": {
+            "": 0.4074074074074073
+        },
+        "enkindling orb": {
+            "": 0.3003388429752066
+        },
+        "lesser eldritch ichor": {
+            "": 0.324873343751197
+        },
+        "instilling orb": {
+            "": 0.3325065759318552
+        },
+        "glassblower's bauble": {
+            "": 0.2482750430740372
+        },
+        "orb of horizons": {
+            "": 0.2
+        },
+        "lesser eldritch ember": {
+            "": 0.25
+        },
+        "orb of fusing": {
+            "": 0.2110801479222532
+        },
+        "cartographer's chisel": {
+            "": 0.184386173261193
+        },
+        "orb of chance": {
+            "": 0.1666666666666667
+        },
+        "tainted blacksmith's whetstone": {
+            "": 0.125
+        },
+        "engineer's orb": {
+            "": 0.1236310209402616
+        },
+        "chromatic orb": {
+            "": 0.1062534003434037
+        },
+        "orb of alteration": {
+            "": 0.07991666666666666
+        },
+        "jeweller's orb": {
+            "": 0.0625
+        },
+        "orb of alchemy": {
+            "": 0.05555555555555557
+        },
+        "orb of augmentation": {
+            "": 0.0499435403812527
+        },
+        "vivid crystallised lifeforce": {
+            "": 0.02632985262830647
+        },
+        "blacksmith's whetstone": {
+            "": 0.03209446718091678
+        },
+        "portal scroll": {
+            "": 0.025
+        },
+        "orb of binding": {
+            "": 0.03999999999999999
+        },
+        "primal crystallised lifeforce": {
+            "": 0.02075471698113207
+        },
+        "wild crystallised lifeforce": {
+            "": 0.02075452120038515
+        },
+        "armourer's scrap": {
+            "": 0.01666666666666667
+        },
+        "orb of transmutation": {
+            "": 0.01400828535017987
+        },
+        "scroll of wisdom": {
+            "": 0.008333333333333333
+        },
+        "rogue's marker": {
+            "": 0.002515896671461303
+        }
+    },
+    "artifact": {},
+    "logbook": {
+        "knights of the sun logbook": {
+            "corrupted:False,ilvl:83+,split:True": 175.14,
+            "corrupted:False,ilvl:<83,split:True": 0,
+            "corrupted:False,ilvl:83+,split:False": 80.55,
+            "corrupted:True,ilvl:83+,split:False": 39.94805454545454,
+            "corrupted:False,ilvl:<83,split:False": 26.56,
+            "corrupted:True,ilvl:<83,split:False": 25.27
+        },
+        "black scythe mercenaries logbook": {
+            "corrupted:False,ilvl:83+,split:True": 159.384,
+            "corrupted:False,ilvl:<83,split:True": 0,
+            "corrupted:False,ilvl:83+,split:False": 50,
+            "corrupted:True,ilvl:83+,split:False": 41.58333333333334,
+            "corrupted:True,ilvl:<83,split:False": 25.97272727272727,
+            "corrupted:False,ilvl:<83,split:False": 43.3125
+        },
+        "druids of the broken circle logbook": {
+            "corrupted:True,ilvl:83+,split:False": 10,
+            "corrupted:True,ilvl:<83,split:False": 10,
+            "corrupted:False,ilvl:83+,split:False": 10.71666666666667,
+            "corrupted:False,ilvl:<83,split:False": 10
+        },
+        "order of the chalice logbook": {
+            "corrupted:True,ilvl:83+,split:False": 10,
+            "corrupted:True,ilvl:<83,split:False": 10,
+            "corrupted:False,ilvl:83+,split:False": 16.5,
+            "corrupted:False,ilvl:<83,split:False": 10
+        }
+    },
+    "fragment": {
+        "visceral reliquary key": {
+            "": 616.9777777777778
+        },
+        "forgotten reliquary key": {
+            "": 406.34
+        },
+        "shiny reliquary key": {
+            "": 440
+        },
+        "archive reliquary key": {
+            "": 286.66
+        },
+        "gift to the goddess": {
+            "": 446
+        },
+        "voidborn reliquary key": {
+            "": 349.2979
+        },
+        "oubliette reliquary key": {
+            "": 290.7
+        },
+        "cosmic reliquary key": {
+            "": 253.88
+        },
+        "chayula's flawless breachstone": {
+            "": 318.5949206349206
+        },
+        "the maven's writ": {
+            "": 264
+        },
+        "sacred blossom": {
+            "": 158.2317647058824
+        },
+        "uul-netol's flawless breachstone": {
+            "": 139.86
+        },
+        "tul's flawless breachstone": {
+            "": 131.25
+        },
+        "esh's flawless breachstone": {
+            "": 132.75
+        },
+        "xoph's flawless breachstone": {
+            "": 130.6
+        },
+        "fragment of shape": {
+            "": 108.0226361655773
+        },
+        "fragment of knowledge": {
+            "": 108.5931578947368
+        },
+        "unrelenting timeless eternal emblem": {
+            "": 31.458
+        },
+        "dedication to the goddess": {
+            "": 48.21818181818182
+        },
+        "chayula's breachstone": {
+            "": 55
+        },
+        "uul-netol's breachstone": {
+            "": 46.36499999999999
+        },
+        "fragment of terror": {
+            "": 36.73333333333331
+        },
+        "fragment of emptiness": {
+            "": 36.69999999999999
+        },
+        "unrelenting timeless vaal emblem": {
+            "": 19.92467532467533
+        },
+        "unrelenting timeless maraketh emblem": {
+            "": 23.57555555555556
+        },
+        "simulacrum": {
+            "": 30.90129870129871
+        },
+        "crescent splinter": {
+            "": 27
+        },
+        "unrelenting timeless templar emblem": {
+            "": 19.07
+        },
+        "veritania's crest": {
+            "": 27.38762593846034
+        },
+        "baran's crest": {
+            "": 27.10156922239079
+        },
+        "drox's crest": {
+            "": 27.41210526315789
+        },
+        "xoph's breachstone": {
+            "": 28.68527272727273
+        },
+        "fragment of eradication": {
+            "": 21.82338622867986
+        },
+        "esh's breachstone": {
+            "": 24.99682539682539
+        },
+        "blood-filled vessel": {
+            "monsterLvl:68": 13.26963636363636,
+            "monsterLvl:70": 9.854545454545455,
+            "monsterLvl:73": 8.836363636363636,
+            "monsterLvl:78": 7.954545454545454,
+            "monsterLvl:83": 15.15454545454545,
+            "monsterLvl:69": 6.31,
+            "monsterLvl:75": 8.709999999999999,
+            "monsterLvl:77": 7.363636363636365,
+            "monsterLvl:82": 8.427272727272728,
+            "monsterLvl:72": 9.030000000000001,
+            "monsterLvl:81": 5,
+            "monsterLvl:76": 8.436363636363636,
+            "monsterLvl:79": 8.99,
+            "monsterLvl:74": 5.808333333333334,
+            "monsterLvl:80": 5.790000000000001,
+            "monsterLvl:71": 9.172727272727274
+        },
+        "tul's breachstone": {
+            "": 27.0935
+        },
+        "unrelenting timeless karui emblem": {
+            "": 13.78787878787879
+        },
+        "fragment of enslavement": {
+            "": 18.64333333333333
+        },
+        "timeless maraketh emblem": {
+            "": 20
+        },
+        "fragment of constriction": {
+            "": 19.32463768115942
+        },
+        "fragment of purification": {
+            "": 18.58933333333333
+        },
+        "al-hezmin's crest": {
+            "": 24.90209690893901
+        },
+        "mortal ignorance": {
+            "": 21.99769230769231
+        },
+        "timeless templar emblem": {
+            "": 13.75
+        },
+        "tribute to the goddess": {
+            "": 19.81730158730159
+        },
+        "fragment of the chimera": {
+            "": 12.22222222222222
+        },
+        "fragment of the hydra": {
+            "": 11.35493684210526
+        },
+        "fragment of the phoenix": {
+            "": 11.15473684210526
+        },
+        "fragment of the minotaur": {
+            "": 11.30736842105263
+        },
+        "mortal rage": {
+            "": 8.955156521739129
+        },
+        "timeless vaal emblem": {
+            "": 4.16004146390051
+        },
+        "mortal grief": {
+            "": 4.239755555555556
+        },
+        "mortal hope": {
+            "": 4
+        },
+        "divine vessel": {
+            "": 2
+        },
+        "timeless eternal emblem": {
+            "": 2.890020862968231
+        },
+        "timeless karui emblem": {
+            "": 2.5
+        },
+        "splinter of chayula": {
+            "": 0.9079755094043888
+        },
+        "splinter of uul-netol": {
+            "": 0.7875328220166928
+        },
+        "sacrifice at midnight": {
+            "": 0.5
+        },
+        "offering to the goddess": {
+            "": 0.4000614141414141
+        },
+        "sacrifice at noon": {
+            "": 0.3333333333333334
+        },
+        "timeless templar splinter": {
+            "": 0.4582972453587975
+        },
+        "timeless maraketh splinter": {
+            "": 0.3333333333333334
+        },
+        "splinter of esh": {
+            "": 0.25
+        },
+        "splinter of tul": {
+            "": 0.25
+        },
+        "sacrifice at dawn": {
+            "": 0.25
+        },
+        "splinter of xoph": {
+            "": 0.25
+        },
+        "sacrifice at dusk": {
+            "": 0.2
+        },
+        "timeless vaal splinter": {
+            "": 0.1670998164642375
+        },
+        "timeless eternal empire splinter": {
+            "": 0.1666666666666667
+        },
+        "simulacrum splinter": {
+            "": 0.1428571428571428
+        },
+        "timeless karui splinter": {
+            "": 0.1665635738831616
+        }
+    },
+    "incubator": {
+        "ornate incubator": {
+            "ilvl:84": 10.2112,
+            "ilvl:86": 12.93206654783126,
+            "ilvl:70": 8.57,
+            "ilvl:68": 8.190000000000001,
+            "ilvl:69": 6.029545454545455,
+            "ilvl:83": 10,
+            "ilvl:75": 8.65,
+            "ilvl:85": 16.72727272727273,
+            "ilvl:82": 8.1712,
+            "ilvl:79": 7.280000000000001,
+            "ilvl:71": 10.747,
+            "ilvl:81": 9,
+            "ilvl:80": 8.990909090909092,
+            "ilvl:78": 7.82,
+            "ilvl:76": 8.709999999999999,
+            "ilvl:73": 7.110000000000001,
+            "ilvl:77": 6.650000000000001,
+            "ilvl:72": 5,
+            "ilvl:74": 8.205
+        },
+        "geomancer's incubator": {
+            "ilvl:72": 3.909999999999999,
+            "ilvl:68": 1.576068376068376,
+            "ilvl:86": 2.962424242424242,
+            "ilvl:76": 2.78,
+            "ilvl:73": 1.71,
+            "ilvl:70": 3.963636363636364,
+            "ilvl:74": 3,
+            "ilvl:75": 5.270000000000001,
+            "ilvl:84": 4.64,
+            "ilvl:71": 3.94,
+            "ilvl:80": 2.272727272727273,
+            "ilvl:77": 1.888888888888889,
+            "ilvl:69": 2.24,
+            "ilvl:82": 1.722222222222223,
+            "ilvl:78": 1.063333333333333,
+            "ilvl:83": 1.92,
+            "ilvl:81": 1.527272727272728,
+            "ilvl:85": 4.633333333333333,
+            "ilvl:79": 0.9944444444444444
+        },
+        "diviner's incubator": {
+            "ilvl:83": 8.466831208007678,
+            "ilvl:86": 56.18244897959185,
+            "ilvl:85": 11.03,
+            "ilvl:80": 5.109999999999999,
+            "ilvl:84": 19.58125,
+            "ilvl:73": 5,
+            "ilvl:71": 8.517777777777779,
+            "ilvl:81": 8.923076923076923,
+            "ilvl:74": 5.279999999999999,
+            "ilvl:79": 7.931818181818182,
+            "ilvl:82": 8.15,
+            "ilvl:68": 5.08,
+            "ilvl:75": 5,
+            "ilvl:72": 5,
+            "ilvl:77": 6.340000000000001,
+            "ilvl:76": 7.057599999999999,
+            "ilvl:78": 9.7,
+            "ilvl:69": 5.009,
+            "ilvl:70": 5
+        },
+        "kalguuran incubator": {
+            "ilvl:86": 5,
+            "ilvl:84": 11.11166666666667,
+            "ilvl:81": 2.62,
+            "ilvl:83": 5,
+            "ilvl:85": 6.36448275862069,
+            "ilvl:73": 3.5,
+            "ilvl:77": 4.19,
+            "ilvl:71": 6.281318681318682,
+            "ilvl:82": 8.900000000000002,
+            "ilvl:76": 2.08,
+            "ilvl:80": 4,
+            "ilvl:74": 4,
+            "ilvl:69": 3.209090909090909,
+            "ilvl:79": 4,
+            "ilvl:78": 16.2,
+            "ilvl:75": 2.43,
+            "ilvl:68": 3.81,
+            "ilvl:70": 3.99,
+            "ilvl:72": 3
+        },
+        "skittering incubator": {
+            "ilvl:84": 2.5,
+            "ilvl:86": 3,
+            "ilvl:82": 1.891666666666667,
+            "ilvl:77": 2,
+            "ilvl:80": 2.8,
+            "ilvl:79": 2,
+            "ilvl:73": 9.15,
+            "ilvl:81": 3.2,
+            "ilvl:71": 10.6,
+            "ilvl:85": 2,
+            "ilvl:78": 1,
+            "ilvl:83": 2,
+            "ilvl:76": 2.2,
+            "ilvl:74": 2.15,
+            "ilvl:69": 4.2,
+            "ilvl:75": 1.87,
+            "ilvl:72": 1,
+            "ilvl:70": 1,
+            "ilvl:68": 1
+        },
+        "thaumaturge's incubator": {
+            "ilvl:86": 3.16125,
+            "ilvl:76": 1.004545454545455,
+            "ilvl:75": 2.055555555555555,
+            "ilvl:84": 3,
+            "ilvl:77": 1,
+            "ilvl:72": 1,
+            "ilvl:70": 2.8,
+            "ilvl:74": 1,
+            "ilvl:71": 2.07,
+            "ilvl:78": 1,
+            "ilvl:83": 3.71,
+            "ilvl:82": 1,
+            "ilvl:85": 8.400000000000002,
+            "ilvl:81": 2,
+            "ilvl:73": 1.822222222222222,
+            "ilvl:69": 0.76,
+            "ilvl:80": 1.1,
+            "ilvl:79": 1.6,
+            "ilvl:68": 1.17
+        },
+        "foreboding incubator": {
+            "ilvl:76": 2.377777777777778,
+            "ilvl:86": 3.53,
+            "ilvl:73": 4.5,
+            "ilvl:85": 3.26,
+            "ilvl:82": 3.6,
+            "ilvl:84": 12.5,
+            "ilvl:77": 1.095272727272727,
+            "ilvl:71": 2.854545454545454,
+            "ilvl:80": 1.3,
+            "ilvl:70": 1.65,
+            "ilvl:83": 1.799145299145299,
+            "ilvl:69": 1,
+            "ilvl:72": 1.73,
+            "ilvl:81": 1.647222222222223,
+            "ilvl:74": 1.009090909090909,
+            "ilvl:79": 1.1,
+            "ilvl:78": 1.645,
+            "ilvl:68": 2.18,
+            "ilvl:75": 1.1
+        },
+        "maddening incubator": {
+            "ilvl:79": 1,
+            "ilvl:70": 1,
+            "ilvl:77": 1,
+            "ilvl:74": 1.53,
+            "ilvl:76": 0.984,
+            "ilvl:86": 1,
+            "ilvl:72": 0.9800000000000001,
+            "ilvl:80": 1,
+            "ilvl:73": 1.63,
+            "ilvl:75": 1,
+            "ilvl:81": 1.725,
+            "ilvl:69": 2.1,
+            "ilvl:84": 1,
+            "ilvl:85": 3,
+            "ilvl:83": 1.079277108433735,
+            "ilvl:78": 0.6600000000000001,
+            "ilvl:71": 3.355555555555556,
+            "ilvl:82": 1,
+            "ilvl:68": 1.881818181818182
+        },
+        "singular incubator": {
+            "ilvl:76": 2.2,
+            "ilvl:68": 1.6,
+            "ilvl:81": 1.9,
+            "ilvl:72": 1,
+            "ilvl:73": 2,
+            "ilvl:84": 2.2,
+            "ilvl:78": 1,
+            "ilvl:82": 1.286363636363636,
+            "ilvl:80": 1,
+            "ilvl:75": 1.054545454545455,
+            "ilvl:74": 1,
+            "ilvl:77": 1.395,
+            "ilvl:83": 1,
+            "ilvl:86": 1,
+            "ilvl:70": 1,
+            "ilvl:69": 1,
+            "ilvl:85": 1.2,
+            "ilvl:71": 2,
+            "ilvl:79": 1
+        },
+        "cartographer's incubator": {
+            "ilvl:86": 1.175000000000001,
+            "ilvl:84": 2,
+            "ilvl:76": 1.971234567901234,
+            "ilvl:74": 50.16150000000001,
+            "ilvl:71": 1.528888888888889,
+            "ilvl:72": 1,
+            "ilvl:73": 1.454545454545455,
+            "ilvl:75": 1.30909090909091,
+            "ilvl:85": 1.081818181818182,
+            "ilvl:81": 1,
+            "ilvl:69": 1,
+            "ilvl:80": 1,
+            "ilvl:78": 4.4,
+            "ilvl:70": 1,
+            "ilvl:77": 2,
+            "ilvl:83": 1,
+            "ilvl:79": 1,
+            "ilvl:82": 1,
+            "ilvl:68": 1.05
+        },
+        "otherworldly incubator": {
+            "ilvl:74": 1.727272727272727,
+            "ilvl:68": 0.9977777777777779,
+            "ilvl:86": 1,
+            "ilvl:81": 1,
+            "ilvl:85": 1,
+            "ilvl:71": 2.3,
+            "ilvl:70": 0.9954545454545454,
+            "ilvl:73": 1,
+            "ilvl:69": 0.9350000000000002,
+            "ilvl:84": 1.5,
+            "ilvl:82": 1,
+            "ilvl:83": 1,
+            "ilvl:80": 1.63,
+            "ilvl:78": 1,
+            "ilvl:75": 1,
+            "ilvl:79": 1,
+            "ilvl:77": 1,
+            "ilvl:76": 1.136363636363636,
+            "ilvl:72": 1
+        },
+        "primal incubator": {
+            "ilvl:73": 1,
+            "ilvl:81": 1.4,
+            "ilvl:82": 1.75,
+            "ilvl:86": 1,
+            "ilvl:84": 1.37875,
+            "ilvl:76": 1,
+            "ilvl:83": 1,
+            "ilvl:72": 1,
+            "ilvl:85": 1,
+            "ilvl:75": 1,
+            "ilvl:80": 1,
+            "ilvl:77": 1,
+            "ilvl:69": 0.504,
+            "ilvl:74": 1,
+            "ilvl:79": 3.140000000000001,
+            "ilvl:78": 1,
+            "ilvl:70": 1,
+            "ilvl:71": 1,
+            "ilvl:68": 1
+        },
+        "enchanted incubator": {
+            "ilvl:74": 1.3,
+            "ilvl:81": 1,
+            "ilvl:79": 1,
+            "ilvl:78": 1,
+            "ilvl:73": 1,
+            "ilvl:80": 1,
+            "ilvl:77": 1.3,
+            "ilvl:84": 1,
+            "ilvl:85": 1,
+            "ilvl:83": 1,
+            "ilvl:75": 1,
+            "ilvl:86": 1,
+            "ilvl:71": 1.5997,
+            "ilvl:76": 3.6,
+            "ilvl:70": 1.272,
+            "ilvl:72": 2.15,
+            "ilvl:82": 3.043333333333333,
+            "ilvl:69": 1,
+            "ilvl:68": 1
+        },
+        "celestial armoursmith's incubator": {
+            "ilvl:82": 1,
+            "ilvl:86": 1,
+            "ilvl:81": 1,
+            "ilvl:83": 1.331818181818182,
+            "ilvl:85": 1,
+            "ilvl:84": 8.100000000000001
+        },
+        "celestial blacksmith's incubator": {
+            "ilvl:84": 2.899999999999999,
+            "ilvl:82": 0.9881818181818183,
+            "ilvl:85": 1,
+            "ilvl:83": 1,
+            "ilvl:86": 1,
+            "ilvl:81": 0.9681818181818184
+        },
+        "blighted incubator": {
+            "ilvl:82": 1,
+            "ilvl:83": 1,
+            "ilvl:78": 3.5125,
+            "ilvl:69": 1,
+            "ilvl:79": 0.9931818181818183,
+            "ilvl:72": 1.05,
+            "ilvl:74": 1,
+            "ilvl:80": 1,
+            "ilvl:84": 1.6,
+            "ilvl:77": 1,
+            "ilvl:85": 1,
+            "ilvl:86": 7.795,
+            "ilvl:73": 3.677272727272728,
+            "ilvl:76": 1,
+            "ilvl:75": 1,
+            "ilvl:81": 1.074074074074074,
+            "ilvl:70": 1.14,
+            "ilvl:71": 5.100000000000001,
+            "ilvl:68": 0.9545454545454546
+        },
+        "obscured incubator": {
+            "ilvl:80": 1,
+            "ilvl:73": 0.9669999999999999,
+            "ilvl:83": 1.278,
+            "ilvl:78": 0.9780000000000001,
+            "ilvl:69": 1,
+            "ilvl:79": 1.09,
+            "ilvl:81": 1,
+            "ilvl:76": 1,
+            "ilvl:86": 1.6,
+            "ilvl:84": 1.690909090909091,
+            "ilvl:72": 1.415,
+            "ilvl:85": 2.431818181818182,
+            "ilvl:82": 1.75,
+            "ilvl:77": 1,
+            "ilvl:75": 1,
+            "ilvl:70": 2.40909090909091,
+            "ilvl:71": 4.4,
+            "ilvl:68": 0.9666666666666668,
+            "ilvl:74": 1
+        },
+        "mysterious incubator": {
+            "ilvl:74": 1,
+            "ilvl:77": 1,
+            "ilvl:76": 1.9,
+            "ilvl:81": 1,
+            "ilvl:82": 6.2,
+            "ilvl:75": 1,
+            "ilvl:73": 1,
+            "ilvl:71": 4.4,
+            "ilvl:84": 1.3,
+            "ilvl:83": 1,
+            "ilvl:86": 1,
+            "ilvl:80": 1,
+            "ilvl:78": 2.2,
+            "ilvl:85": 1,
+            "ilvl:79": 1,
+            "ilvl:68": 1,
+            "ilvl:72": 1,
+            "ilvl:70": 0.5,
+            "ilvl:69": 1
+        },
+        "infused incubator": {
+            "ilvl:77": 2.075,
+            "ilvl:83": 1,
+            "ilvl:84": 1.3,
+            "ilvl:86": 1,
+            "ilvl:81": 1,
+            "ilvl:69": 1,
+            "ilvl:82": 2.3,
+            "ilvl:85": 1,
+            "ilvl:74": 1,
+            "ilvl:68": 1,
+            "ilvl:79": 1,
+            "ilvl:80": 1.3,
+            "ilvl:78": 13.26153846153846,
+            "ilvl:70": 3.350000000000001,
+            "ilvl:76": 4.710000000000001,
+            "ilvl:71": 4.614285714285715,
+            "ilvl:73": 1.58076923076923,
+            "ilvl:75": 1.3,
+            "ilvl:72": 1.9
+        },
+        "fragmented incubator": {
+            "ilvl:77": 1,
+            "ilvl:74": 1.013846153846154,
+            "ilvl:75": 1,
+            "ilvl:80": 2.3,
+            "ilvl:85": 1,
+            "ilvl:76": 1,
+            "ilvl:81": 1,
+            "ilvl:86": 1,
+            "ilvl:72": 1,
+            "ilvl:79": 1.600000000000001,
+            "ilvl:69": 1,
+            "ilvl:83": 1,
+            "ilvl:82": 1,
+            "ilvl:84": 1.98,
+            "ilvl:78": 1.6,
+            "ilvl:70": 1,
+            "ilvl:73": 1,
+            "ilvl:68": 0.9600000000000002,
+            "ilvl:71": 10
+        },
+        "abyssal incubator": {
+            "ilvl:84": 1,
+            "ilvl:79": 1,
+            "ilvl:78": 1,
+            "ilvl:73": 1,
+            "ilvl:82": 2.45,
+            "ilvl:81": 1,
+            "ilvl:76": 1.775,
+            "ilvl:86": 1,
+            "ilvl:83": 1,
+            "ilvl:80": 2.181818181818182,
+            "ilvl:77": 1,
+            "ilvl:85": 1,
+            "ilvl:75": 1,
+            "ilvl:70": 2.2,
+            "ilvl:72": 1.563636363636364,
+            "ilvl:71": 7.200000000000001,
+            "ilvl:69": 1,
+            "ilvl:74": 5.36,
+            "ilvl:68": 1
+        },
+        "morphing incubator": {
+            "ilvl:84": 5.9,
+            "ilvl:82": 1,
+            "ilvl:76": 1.6,
+            "ilvl:81": 1,
+            "ilvl:80": 1,
+            "ilvl:86": 1.065,
+            "ilvl:83": 1,
+            "ilvl:70": 1.13,
+            "ilvl:74": 1,
+            "ilvl:73": 4.4,
+            "ilvl:85": 1,
+            "ilvl:77": 1,
+            "ilvl:79": 1,
+            "ilvl:78": 9.350000000000001,
+            "ilvl:75": 1,
+            "ilvl:68": 1.675,
+            "ilvl:71": 2,
+            "ilvl:69": 1,
+            "ilvl:72": 1
+        },
+        "fossilised incubator": {
+            "ilvl:81": 1.66,
+            "ilvl:74": 111.115,
+            "ilvl:77": 1,
+            "ilvl:85": 1,
+            "ilvl:78": 1,
+            "ilvl:80": 1,
+            "ilvl:84": 1,
+            "ilvl:82": 4.566666666666666,
+            "ilvl:86": 1,
+            "ilvl:83": 1,
+            "ilvl:70": 2.2,
+            "ilvl:76": 13.175,
+            "ilvl:73": 1.96,
+            "ilvl:75": 1,
+            "ilvl:79": 1,
+            "ilvl:72": 1.12,
+            "ilvl:69": 2.8,
+            "ilvl:68": 0.7850000000000001,
+            "ilvl:71": 5.100000000000001
+        },
+        "celestial jeweller's incubator": {
+            "ilvl:85": 1,
+            "ilvl:83": 1,
+            "ilvl:82": 0.9415000000000001,
+            "ilvl:86": 3.7,
+            "ilvl:81": 1,
+            "ilvl:84": 1.318181818181818
+        }
+    }
+}

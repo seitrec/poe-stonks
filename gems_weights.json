@@ -1,0 +1,533 @@
+{
+    "Void Manipulation Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Summon Skitterbots": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Boneshatter": {
+        "Superior": 50,
+        "Anomalous": 50,
+        "Divergent": 10
+    },
+    "Plague Bearer": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Inspiration Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Melee Splash Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50
+    },
+    "Power Charge On Critical Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Tempest Shield": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Determination": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Wrath": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 1
+    },
+    "Minion Speed Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Venom Gyre": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Static Strike": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 5,
+        "Phantasmal": 50
+    },
+    "Ice Spear": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100,
+        "Phantasmal": 50
+    },
+    "Precision": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100
+    },
+    "Greater Multiple Projectiles Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50
+    },
+    "Increased Duration Support": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 50
+    },
+    "Enlighten Support": {
+        "Superior": 50,
+        "Anomalous": 5
+    },
+    "Blood Rage": {
+        "Superior": 50,
+        "Anomalous": 5,
+        "Divergent": 50
+    },
+    "Kinetic Blast": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100
+    },
+    "Defiance Banner": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100
+    },
+    "Mana Leech Support": {
+        "Superior": 50,
+        "Anomalous": 5,
+        "Divergent": 20
+    },
+    "Elemental Penetration Support": {
+        "Superior": 50,
+        "Anomalous": 100
+    },
+    "Spectral Shield Throw": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Cremation": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50,
+        "Phantasmal": 10
+    },
+    "Shockwave Totem": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20,
+        "Phantasmal": 100
+    },
+    "Summon Raging Spirit": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50,
+        "Phantasmal": 20
+    },
+    "Vortex": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50,
+        "Phantasmal": 100
+    },
+    "Multistrike Support": {
+        "Superior": 50,
+        "Anomalous": 50,
+        "Divergent": 100
+    },
+    "Creeping Frost": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10,
+        "Phantasmal": 50
+    },
+    "Arcane Cloak": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Animate Guardian": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Herald of Agony": {
+        "Superior": 50,
+        "Anomalous": 50,
+        "Divergent": 100
+    },
+    "Charged Traps Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Pulverise Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Bone Offering": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 5
+    },
+    "Purity of Elements": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 5
+    },
+    "Withering Touch Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50
+    },
+    "Rage Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 5
+    },
+    "Cyclone": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 100
+    },
+    "Mark On Hit Support": {
+        "Superior": 100,
+        "Anomalous": 50,
+        "Divergent": 50
+    },
+    "Artillery Ballista": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Arctic Armour": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Trinity Support": {
+        "Superior": 100,
+        "Anomalous": 50,
+        "Divergent": 20
+    },
+    "Minion Damage Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Anger": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 5
+    },
+    "Cluster Traps Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Summon Skeletons": {
+        "Superior": 50,
+        "Anomalous": 50,
+        "Divergent": 50,
+        "Phantasmal": 50
+    },
+    "Nightblade Support": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100
+    },
+    "Faster Projectiles Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Arrogance Support": {
+        "Superior": 100,
+        "Anomalous": 50,
+        "Divergent": 50
+    },
+    "Mirage Archer Support": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 50
+    },
+    "Multiple Traps Support": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 50
+    },
+    "Malevolence": {
+        "Superior": 50,
+        "Anomalous": 5,
+        "Divergent": 100
+    },
+    "Tornado Shot": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100
+    },
+    "Chance to Poison Support": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100
+    },
+    "Despair": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Blade Vortex": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100,
+        "Phantasmal": 100
+    },
+    "Minion Life Support": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100
+    },
+    "Blood and Sand": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Feeding Frenzy Support": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100
+    },
+    "Soulrend": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Toxic Rain": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Ancestral Protector": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20,
+        "Phantasmal": 100
+    },
+    "Reave": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100,
+        "Phantasmal": 10
+    },
+    "Lightning Arrow": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 10
+    },
+    "Smite": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Unearth": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Leap Slam": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Cast when Damage Taken Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Empower Support": {
+        "Superior": 50,
+        "Anomalous": 5
+    },
+    "Fork Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Enhance Support": {
+        "Superior": 50,
+        "Anomalous": 5
+    },
+    "Blink Arrow": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Discharge": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 5,
+        "Phantasmal": 20
+    },
+    "Spark": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 100
+    },
+    "Petrified Blood": {
+        "Superior": 100,
+        "Anomalous": 50,
+        "Divergent": 50
+    },
+    "War Banner": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100
+    },
+    "Vitality": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 100
+    },
+    "Lightning Tendrils": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 50
+    },
+    "Life Gain on Hit Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 10
+    },
+    "Flame Wall": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 10
+    },
+    "Haste": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 10
+    },
+    "Discipline": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Temporal Rift": {
+        "Superior": 100,
+        "Anomalous": 50,
+        "Divergent": 50
+    },
+    "Galvanic Arrow": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Manaforged Arrows Support": {
+        "Superior": 100,
+        "Anomalous": 50,
+        "Divergent": 10
+    },
+    "Mirror Arrow": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 20
+    },
+    "Infernal Cry": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50,
+        "Phantasmal": 10
+    },
+    "Hatred": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 20
+    },
+    "Dominating Blow": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50,
+        "Phantasmal": 10
+    },
+    "Hypothermia Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Herald of Ash": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Blast Rain": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100,
+        "Phantasmal": 100
+    },
+    "Burning Arrow": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Grace": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100
+    },
+    "Scourge Arrow": {
+        "Superior": 50,
+        "Anomalous": 20,
+        "Divergent": 100,
+        "Phantasmal": 100
+    },
+    "Culling Strike Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 50
+    },
+    "Barrage Support": {
+        "Superior": 50,
+        "Anomalous": 10,
+        "Divergent": 20
+    },
+    "Bonechill Support": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    },
+    "Righteous Fire": {
+        "Superior": 50,
+        "Anomalous": 100,
+        "Divergent": 100
+    }
+}

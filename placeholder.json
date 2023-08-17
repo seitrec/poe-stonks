@@ -1,0 +1,156 @@
+{
+    "viz": "timeseries",
+    "requests": [
+        {
+            "style": {
+                "palette": "dog_classic",
+                "type": "solid",
+                "width": "normal"
+            },
+            "type": "line",
+            "formulas": [
+                {
+                    "formula": "(+40*query3+40*query4+40*query5+40*query6+1*query7+1*query8+5*query9+5*query10+1*query11+1*query12+5*query13+5*query14+1*query15+1*query16+5*query17+5*query18+1*query19+1*query20+5*query21+5*query22+1*query23+30*query24+60*query25+20*query26+250*query27-4*query1-350*query2)/56"
+                }
+            ],
+            "queries": [
+                {
+                    "name": "query1",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:divine_orb}"
+                },
+                {
+                    "name": "query2",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:chaos_orb}"
+                },
+                {
+                    "name": "query3",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:deception_contract,ilvl:83}"
+                },
+                {
+                    "name": "query4",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:lockpicking_contract,ilvl:83}"
+                },
+                {
+                    "name": "query5",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:perception_contract,ilvl:83}"
+                },
+                {
+                    "name": "query6",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.contract.best_effort{type:counter-thaumaturgy_contract,ilvl:83}"
+                },
+                {
+                    "name": "query7",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:unusual_gems_blueprint,fullyrevealed:true,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query8",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:unusual_gems_blueprint,fullyrevealed:true,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query9",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:unusual_gems_blueprint,fullyrevealed:false,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query10",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:unusual_gems_blueprint,fullyrevealed:false,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query11",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:enchanted_armaments_blueprint,fullyrevealed:true,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query12",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:enchanted_armaments_blueprint,fullyrevealed:true,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query13",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:enchanted_armaments_blueprint,fullyrevealed:false,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query14",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:enchanted_armaments_blueprint,fullyrevealed:false,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query15",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:replicas_or_experimented_items_blueprint,fullyrevealed:true,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query16",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:replicas_or_experimented_items_blueprint,fullyrevealed:true,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query17",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:replicas_or_experimented_items_blueprint,fullyrevealed:false,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query18",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:replicas_or_experimented_items_blueprint,fullyrevealed:false,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query19",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:thieves__trinkets_or_currency_blueprint,fullyrevealed:true,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query20",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:thieves__trinkets_or_currency_blueprint,fullyrevealed:true,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query21",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:thieves__trinkets_or_currency_blueprint,fullyrevealed:false,ilvl:81,totalwings:3}"
+                },
+                {
+                    "name": "query22",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.blueprint.best_effort{type:thieves__trinkets_or_currency_blueprint,fullyrevealed:false,ilvl:81,totalwings:4}"
+                },
+                {
+                    "name": "query23",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:eldritch_chaos_orb}"
+                },
+                {
+                    "name": "query24",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:stacked_deck}"
+                },
+                {
+                    "name": "query25",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:chaos_orb}"
+                },
+                {
+                    "name": "query26",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:orb_of_unmaking}"
+                },
+                {
+                    "name": "query27",
+                    "data_source": "metrics",
+                    "query": "avg:poestack.econprice.currency.best_effort{type:orb_of_alteration}"
+                }
+            ],
+            "response_format": "timeseries"
+        }
+    ]
+}
