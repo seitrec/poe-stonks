@@ -492,14 +492,14 @@ class Economy_Gem_Summary(Economy_Tag_Summary):
     def run_strats(self, curr_summary, misc_summary):
         # print(misc_summary.key_handlers)
         # print(misc_summary.key_handlers['chronicle of atzoatl'].find_property_match("room", "doryani institute")[0].values[1])
-        dory_value = misc_summary.key_handlers['chronicle of atzoatl'].find_property_match("room", "doryani institute")[0].values[1]
-        prime_value = curr_summary.key_handlers['prime regrading lens'].ninja_value
-        secondary_value = curr_summary.key_handlers['secondary regrading lens'].ninja_value
-        # TODO: actual API prices
-        self.submit_temple_returns(dory_value)
+        dory_value = misc_summary.key_handlers['chronicle of atzoatl'].find_property_match("room", "doryani institute")[0].values[1] if 'chronicle of atzoatl' in misc_summary.key_handlers else 0
+        if dory_value:
+            self.submit_temple_returns(dory_value)
         self.submit_vaal_returns(1)
-        self.submit_lens_returns(prime_value, secondary_value)
-        pass
+        prime_value = curr_summary.key_handlers['prime regrading lens'].ninja_value if 'prime regrading lens' in misc_summary.key_handlers else 0
+        secondary_value = curr_summary.key_handlers['secondary regrading lens'].ninja_value if 'secondary regrading lens' in misc_summary.key_handlers else 0
+        if prime_value and secondary_value:
+            self.submit_lens_returns(prime_value, secondary_value)
 
 class Economy_Misc_Summary(Economy_Tag_Summary):
     def __init__(self, trade_api_querier, tag, currency_summary):
@@ -509,8 +509,15 @@ class Economy_Misc_Summary(Economy_Tag_Summary):
         self.currency_summary = currency_summary
 
     def update(self):
-        self.update_with_poestack(self.trade_api_querier.get_temple_gem3(self.currency_summary))
-        self.update_with_poestack(self.trade_api_querier.get_temple_corru3(self.currency_summary))
+        try:
+            self.update_with_poestack(self.trade_api_querier.get_temple_gem3(self.currency_summary))
+        except:
+            pass
+        try:
+            self.update_with_poestack(self.trade_api_querier.get_temple_corru3(self.currency_summary))
+        except:
+            pass
+        
         # self.print()
 
 class Economy_Store:

@@ -171,12 +171,11 @@ class Trade_API_Querier:
         }
 
     def poestack_ify(self, key, properties, json_resp, currency_summary):
-        currency_type = l['listing']['price']['currency']
+        
 
-        if currency_type in Trade_API_Querier.trade_api_short_map:
-            currency_type = Trade_API_Querier.trade_api_short_map[currency_type]
         listings = [{
-            "listedValue": currency_summary.convert_to_chaos(currency_type, l['listing']['price']['amount']),
+            "listedValue": currency_summary.convert_to_chaos(currency_type = (Trade_API_Querier.trade_api_short_map[l['listing']['price']['currency']] if l['listing']['price']['currency'] in Trade_API_Querier.trade_api_short_map else l['listing']['price']['currency']), 
+                amount = l['listing']['price']['amount']),
             "quantity": 1,
         } for l in json_resp['result']]
         avg = sum(l["listedValue"] for l in listings)/len(listings)
