@@ -6,7 +6,7 @@ class Config:
         'statsd_host':'127.0.0.1',
         'statsd_port':8125
     }
-    league = "Standard"
+    league = "Ancestor"
     trade_api_headers = {
         'Cookie': 'POESESSID=8499042a30412c275f9fe0204fa8b823',
         'user-agent': 'Maple-testing-trade-api-queries',

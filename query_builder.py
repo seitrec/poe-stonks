@@ -120,6 +120,13 @@ class POE_Ninja_Querier:
 
 
 class Trade_API_Querier:
+    trade_api_short_map = {
+        "chaos": "chaos orb",
+        "alch": "orb of alchemy",
+        "fusing": "orb of fusing",
+        "alteration": "orb of alteration",
+        "chance": "orb of chance",
+    }
     def __init__(self, Config):
         self.league = Config.league
         self.headers = Config.trade_api_headers
@@ -164,8 +171,12 @@ class Trade_API_Querier:
         }
 
     def poestack_ify(self, key, properties, json_resp, currency_summary):
+        currency_type = l['listing']['price']['currency']
+
+        if currency_type in Trade_API_Querier.trade_api_short_map:
+            currency_type = Trade_API_Querier.trade_api_short_map[currency_type]
         listings = [{
-            "listedValue": currency_summary.convert_to_chaos(l['listing']['price']['currency'] + " orb", l['listing']['price']['amount']),
+            "listedValue": currency_summary.convert_to_chaos(currency_type, l['listing']['price']['amount']),
             "quantity": 1,
         } for l in json_resp['result']]
         avg = sum(l["listedValue"] for l in listings)/len(listings)
