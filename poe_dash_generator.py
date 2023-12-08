@@ -35,21 +35,22 @@ def parse_csv_table():
     with open("downloaded_table.csv", 'r') as file:
         strat_name = str(file.readline().split(",")[1]).replace("\n", "")
         run_count = int(file.readline().split(",")[1])
+        runs_per_hour = int(file.readline().split(",")[1])
         file.readline() # ignore the titles line
-        spend_data = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
-        ret_data = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
+        spend_data = defaultdict(lambda: defaultdict(int))
+        ret_data = defaultdict(lambda: defaultdict(int))
         for line in file:
-            econ_type, name, tags, value, spend, ret = line.split(",")[0:6]
-            tags = tags.replace(";", ",")
-            value = float(value)
-            spend = int(spend)
-            ret = int(ret)
-            print_if_debug(econ_type, name, tags, value, spend, ret)
+            econ_type, volume, metric, key, tags, aggr_tags, value, spend, ret = line.replace("\n", "").split(",")
+            tags = tags.replace("|", ",")
+            spend = int(spend) if spend != "" else 0
+            ret = int(ret) if ret != "" else 0
+
+            print_if_debug(econ_type, key, tags, value, spend, ret)
             if spend != 0:
-                spend_data[econ_type][name][tags] = spend
+                spend_data[metric][tags] = spend
             if ret != 0:
-                ret_data[econ_type][name][tags] = ret
-    return strat_name, run_count, spend_data, ret_data
+                ret_data[metric][tags] = ret
+    return strat_name, run_count, runs_per_hour, spend_data, ret_data
 
 def join_name_and_clean_tags(tags, econ_name):
     subtags = "type:"+ econ_name
@@ -57,40 +58,42 @@ def join_name_and_clean_tags(tags, econ_name):
         subtags += "," + tags
     return subtags.replace(" ", "_").replace("<", "_").replace("+", "").replace("'", "_").lower()
 
+def cleanup_tags(tags):
+    return tags.replace(" ", "_").replace("<", "_").replace("+", "").replace("'", "_").lower()
+
 def get_queries(spend_data, ret_data):
-    query_count = 1
+    query_index = 1
     spend_queries = []
-    for econ_type, econ_data in spend_data.items():
-        for name, name_data in econ_data.items():
-            for tags, spend in name_data.items():
+    for metric, tags_data in spend_data.items():
+            for tags, spend in tags_data.items():
                 spend_queries += [(spend, {
-                    "name": "query" + str(query_count),
+                    "name": "query" + str(query_index),
                     "data_source": "metrics",
-                    "query": _QUERY_TEMPLATE % (METRIC_POESTACK_ECON_BEST_EFFORT % econ_type, join_name_and_clean_tags(tags, name))
+                    "query": _QUERY_TEMPLATE % (metric, cleanup_tags(tags)),
                 })]
-                query_count += 1
+                query_index += 1
     ret_queries = []
-    for econ_type, econ_data in ret_data.items():
-        for name, name_data in econ_data.items():
-            for tags, ret in name_data.items():
+    for metric, tags_data in ret_data.items():
+            for tags, ret in tags_data.items():
                 ret_queries += [(ret, {
-                    "name": "query" + str(query_count),
+                    "name": "query" + str(query_index),
                     "data_source": "metrics",
-                    "query": _QUERY_TEMPLATE % (METRIC_POESTACK_ECON_BEST_EFFORT % econ_type, join_name_and_clean_tags(tags, name))
+                    "query": _QUERY_TEMPLATE % (metric, cleanup_tags(tags)),
                 })]
-                query_count += 1
+                query_index += 1
     return spend_queries, ret_queries
 
-def build_formulae(run_count, spend_queries, ret_queries):
+def build_formulae(run_count, runs_per_hour, spend_queries, ret_queries):
     formula = ""
     for query_tuple in ret_queries:
         formula += "+%d*%s" % (query_tuple[0], query_tuple[1]["name"])
     for query_tuple in spend_queries:
         formula += "-%d*%s" % (query_tuple[0], query_tuple[1]["name"])
     print_if_debug(formula)
-    return [{"formula": "(%s)/%d" % (formula, run_count)}]
+    return [{"alias": "Per Run", "formula": "(%s)/%d" % (formula, run_count)}, 
+    {"alias": "Per Hour", "formula": "%d*(%s)/%d" % (runs_per_hour, formula, run_count)}]
 
-def build_total_returl_tile_json(strat_name, spend_queries, ret_queries, formulae):
+def build_total_return_tile_json(strat_name, spend_queries, ret_queries, formulae):
     tile = _TIMESERIES_DICT_TEMPLATE.copy()
     tile["requests"][0]["formulas"] += formulae
     tile["requests"][0]["queries"] += [tup[1] for tup in spend_queries]
@@ -110,11 +113,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.debug:
         DEBUG_FLAG = True
-    strat_name, run_count, spend_data, ret_data = parse_csv_table()
+    strat_name, run_count, runs_per_hour, spend_data, ret_data = parse_csv_table()
 
     spend_queries, ret_queries = get_queries(spend_data, ret_data)
-    formulae = build_formulae(run_count, spend_queries, ret_queries)
-    tile = build_total_returl_tile_json(strat_name, spend_queries, ret_queries, formulae)
+    formulae = build_formulae(run_count, runs_per_hour, spend_queries, ret_queries)
+    tile = build_total_return_tile_json(strat_name, spend_queries, ret_queries, formulae)
 
 
 

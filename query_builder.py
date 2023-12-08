@@ -21,7 +21,7 @@ class POE_Stack_Querier:
             #     request.status_code, query))
             return []
 
-    def summary(self, tag, quantityMin=25, offSet=0, searchString=""):
+    def summary(self, tag, quantityMin=25, offSet=0, limit=200, searchString=""):
         query = """
             query Query($search: LivePricingSummarySearch!) {
               livePricingSummarySearch(search: $search) {
@@ -67,6 +67,7 @@ class POE_Stack_Querier:
                 "searchString": searchString,
                 "tag": tag,
                 "quantityMin": quantityMin,
+                "limit": limit,
             }
         }
         res = self.query_poe_stack(query, variables)["data"]["livePricingSummarySearch"]["entries"]
@@ -122,10 +123,13 @@ class POE_Ninja_Querier:
 class Trade_API_Querier:
     trade_api_short_map = {
         "chaos": "chaos orb",
+        "divine": "divine orb",
         "alch": "orb of alchemy",
         "fusing": "orb of fusing",
         "alteration": "orb of alteration",
         "chance": "orb of chance",
+        "awakened-sextant": "awakened sextant",
+        "vaal": "vaal orb",
     }
     def __init__(self, Config):
         self.league = Config.league
@@ -171,13 +175,12 @@ class Trade_API_Querier:
         }
 
     def poestack_ify(self, key, properties, json_resp, currency_summary):
-        
-
         listings = [{
-            "listedValue": currency_summary.convert_to_chaos(currency_type = (Trade_API_Querier.trade_api_short_map[l['listing']['price']['currency']] if l['listing']['price']['currency'] in Trade_API_Querier.trade_api_short_map else l['listing']['price']['currency']), 
+            "listedValue": currency_summary.convert_to_chaos(currency = (Trade_API_Querier.trade_api_short_map[l['listing']['price']['currency']] if l['listing']['price']['currency'] in Trade_API_Querier.trade_api_short_map else l['listing']['price']['currency']), 
                 amount = l['listing']['price']['amount']),
             "quantity": 1,
         } for l in json_resp['result']]
+
         avg = sum(l["listedValue"] for l in listings)/len(listings)
         estimate = min(v["listedValue"] for v in listings if v["listedValue"] > 0.9*avg)
         poestack_json = [{

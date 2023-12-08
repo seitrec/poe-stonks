@@ -1,5 +1,6 @@
 from constants import *
 from query_builder import *
+from utils import *
 import json
 import time
 
@@ -13,11 +14,12 @@ from datadog import statsd
 
 
 class Market_Handler:
-    def __init__(self, tag, key):
+    def __init__(self, tag, key, key_tags):
         self.tag = tag
         self.key = key
         self.hashString = ""
         self.properties = ""
+        self.key_tags = key_tags
         self.properties_tags = []
         self.properties_key = ""
         self.display_name = ""
@@ -28,20 +30,21 @@ class Market_Handler:
         return
 
     @classmethod
-    def sanitize_key(cls, key):
-        return key.lower()
+    def sanitize(cls, raw):
+        return str(raw).lower().replace(",", "_").replace(":", ".").replace("\n", "_")
 
     @classmethod
-    def parse_properties_poestack(cls, raw_item):
+    def parse_properties_poestack(cls, raw_item, key_tags):
         raw_properties = raw_item["itemGroup"]["properties"]
         properties = {prop["key"]: prop["value"] for prop in raw_properties}
-        properties_tags = ["%s:%s" % (pk, pv) for pk, pv in properties.items()]
+        properties_tags = ["%s:%s" % (Market_Handler.sanitize(pk), Market_Handler.sanitize(pv)) 
+        for pk, pv in properties.items()]
         properties_key = "|".join(properties_tags)
         return properties, properties_tags, properties_key
 
     def update(self, raw_item):
         self.hashString = raw_item["itemGroup"]["hashString"]
-        self.properties, self.properties_tags, self.properties_key = Market_Handler.parse_properties_poestack(raw_item)
+        self.properties, self.properties_tags, self.properties_key = Market_Handler.parse_properties_poestack(raw_item, self.key_tags)
         self.display_name = raw_item["itemGroup"]["displayName"]
         self.process_values(raw_item)
         return
@@ -65,20 +68,28 @@ class Market_Handler:
         print(self.toCSV())
         return 
 
+    def get_combined_tags(self):
+        return self.key_tags + self.properties_tags
+
     def toCSV(self):
         return "%s, %s, %s, %d, %d" % (self.tag, self.key, self.properties_key, self.values[1], self.stocks[1])
 
+    def write_as_csv(self, f, volume):
+        if self.values[volume] <= 0:
+            return
+        # "Tag, Key, Properties, Value, Spend, Return
+        csv_tags = "|".join(self.get_combined_tags())
+        f.write("%s, %d, %s, %s, %s, %s, %d, , \n" % (self.tag, volume, Templates.econ_price_metric(self.tag, volume), self.key, csv_tags, "", self.values[volume]))
 
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__, 
             sort_keys=True, indent=4)
 
-    def report(self, additional_tags):
-        dd_tags = self.properties_tags + additional_tags
+    def report(self):
         if self.values[1] != -1:
-            statsd.gauge(Templates.econ_price_metric(self.tag, 1), self.values[1], tags=dd_tags)
+            statsd.gauge(Templates.econ_price_metric(self.tag, 1), self.values[1], tags=self.get_combined_tags())
         if self.values[25] != -1:
-            statsd.gauge(Templates.econ_price_metric(self.tag, 25), self.values[25], tags=dd_tags)
+            statsd.gauge(Templates.econ_price_metric(self.tag, 25), self.values[25], tags=self.get_combined_tags())
         return
 
 class Gem_Market_Handler(Market_Handler):
@@ -123,25 +134,38 @@ class Key_Handler():
         return
 
     def update(self, raw_item):
-        properties, properties_tags, properties_key = Market_Handler.parse_properties_poestack(raw_item)
+        properties, properties_tags, properties_key = Market_Handler.parse_properties_poestack(raw_item, self.key_tags)
         if not properties_key in self.variants:
-            self.variants[properties_key] = Market_Handler(self.tag, self.key)
+            self.variants[properties_key] = Market_Handler(self.tag, self.key, self.key_tags)
         self.variants[properties_key].update(raw_item)
 
     def update_ninja(self, ninja_value):
         self.ninja_value = ninja_value
         if len(self.variants) == 0:
-            self.variants[""] = Market_Handler(self.tag, self.key)
+            self.variants[""] = Market_Handler(self.tag, self.key, self.key_tags)
 
     def parse_tags(self, tag, key):
         key_tags = ["%s:%s" % ("key", self.key)]
         if tag == "essence":
             if "horror" in key or "delirium" in key or "hysteria" in key or "insanity" in key:
-                key_tags.append("tier:" + key.split(" ")[-1])
+                key_tags.append("tier:corrupted")
             else:
                 key_tags.append("tier:" + key.split(" ")[0])
         elif tag == "scarab":
             key_tags.append("tier:" + key.split(" ")[0])
+        elif tag == "map":
+            if "ravaged" in key:
+                key_tags.append("mapset:" + "blight_ravaged")
+            elif "blighted" in key:
+                key_tags.append("mapset:" + "blighted")
+            elif any(conq in key for conq in ["baran", "veritania", "drox", "hezmin"]):
+                key_tags.append("mapset:" + "conqueror")
+            elif any(shap in key for shap in ["minotaur", "phoenyx", "chimera", "hydra"]):
+                key_tags.append("mapset:" + "shaper")
+            elif any(eld in key for eld in ["eradicator", "purifier", "constrictor", "enslaver"]):
+                key_tags.append("mapset:" + "elder")
+            else:
+                key_tags.append("mapset:" + "basic")
         return key_tags
         # elif tag == "scarab":
         #     self.key_tags.append(["tier:" + key.split(" ")[0]])
@@ -161,6 +185,11 @@ class Key_Handler():
             csv = csv + "%s, %s, %s, %d, %d, %d\n" % (handler.tag, handler.key, handler.properties_key, self.ninja_value, handler.values[1], handler.stocks[1])
         return csv
 
+    def write_as_csv_no_filters(self, f):
+        for variant in self.variants.values():
+            for volume in [1, 25]:
+                variant.write_as_csv(f, volume)
+
     def print(self):
         print(self.toCSV(), end="")
         # for handler in self.variants.values():
@@ -169,7 +198,7 @@ class Key_Handler():
 
     def report(self):
         for handler in self.variants.values():
-            handler.report(self.key_tags)
+            handler.report()
         if self.ninja_value != -1:
             statsd.gauge(Templates.ninja_price_metric(self.tag), self.ninja_value, tags=self.key_tags)
 
@@ -195,7 +224,7 @@ class Gem_Handler(Key_Handler):
         if properties["short"] == "1":
             self.ninja_value = ninja_raw["chaosValue"]
         if not properties_key in self.variants:
-            self.variants[properties_key] = Gem_Market_Handler(self.tag, self.key)
+            self.variants[properties_key] = Gem_Market_Handler(self.tag, self.key, self.key_tags)
         self.variants[properties_key].update(ninja_raw)
 
     def parse_tags(self, tag, key):
@@ -346,7 +375,6 @@ class Gem_Handler(Key_Handler):
 
             temple_return = int(part_v2020 + part_v2120 + part_v2023 + part_2020c + part_21 + part_2120 + part_2023 + part_2123 - price_2020 - temple_value)
 
-
             if temple_return > 50:
                 # print(estimation, self.key, "base value= ", price_2020, "temple_return= ", temple_return)
                 statsd.gauge(Templates._METRIC_STRAT_CORRUPTION_TEMPLE_GEM, temple_return, tags=self.key_tags + ["estimation:%s" % estimation])
@@ -363,7 +391,7 @@ class Economy_Tag_Summary:
 
     def update_with_poestack(self, raw):
         for raw_item in raw:
-            sanitized_key = Market_Handler.sanitize_key(raw_item["itemGroup"]["key"])
+            sanitized_key = Market_Handler.sanitize(raw_item["itemGroup"]["key"])
             if not sanitized_key in self.key_handlers:
                 self.key_handlers[sanitized_key] = Key_Handler(self.tag, sanitized_key)
             self.key_handlers[sanitized_key].update(raw_item)
@@ -371,12 +399,12 @@ class Economy_Tag_Summary:
 
     def parse_ninja_raw_values(self, raw):
         # for line in raw['lines']:
-        #     if Market_Handler.sanitize_key(line['name']) == "doryani's prototype":
+        #     if Market_Handler.sanitize(line['name']) == "doryani's prototype":
         #         print(line)
         if self.tag == "currency" or self.tag == "fragment":
-            return {Market_Handler.sanitize_key(n['currencyTypeName']):n['chaosEquivalent'] for n in raw['lines']}
+            return {Market_Handler.sanitize(n['currencyTypeName']):n['chaosEquivalent'] for n in raw['lines']}
         else:
-            return {Market_Handler.sanitize_key(n['name']):n['chaosValue'] for n in raw['lines']}
+            return {Market_Handler.sanitize(n['name']):n['chaosValue'] for n in raw['lines']}
 
     def update_with_poeninja(self, raw):
         ninja_values = self.parse_ninja_raw_values(raw)
@@ -392,7 +420,8 @@ class Economy_Tag_Summary:
                 self.update_with_poestack(raw_poe_stack)
             except KeyboardInterrupt:
                 exit()
-            except:
+            except Exception as e:
+                print(e)
                 print("failed to query poestack for %s" % self.tag)
         if self.markets["ninja"]:
             try:
@@ -400,12 +429,13 @@ class Economy_Tag_Summary:
                 self.update_with_poeninja(raw_poe_ninja)
             except KeyboardInterrupt:
                 exit()
-            except:
+            except Exception as e:
+                print(e)
                 print("failed to query poeninja for %s" % self.tag)
-        # self.print()
+        self.print()
 
     def get_ninja_value(self, key):
-        sanitized_key = Market_Handler.sanitize_key(key)
+        sanitized_key = Market_Handler.sanitize(key)
         if sanitized_key in self.key_handlers:
             return self.key_handlers[sanitized_key].ninja_value
         return -1
@@ -422,9 +452,58 @@ class Economy_Tag_Summary:
         value_c = self.get_ninja_value(currency) if currency != "chaos orb" else 1
         if target_value_c == -1 or value_c == -1:
             print("Tried to convert %s(%d) to %s(%d) but values are not usable" % (currency, value_c, target_currency, target_value_c))
-            exit()
         
         return int(amount*value_c/target_value_c)
+
+    def write_as_csv_ninja(self, f):
+        volume = 1
+        for key_handler in self.key_handlers.values():
+            csv_tags = "|".join(key_handler.key_tags)
+            f.write("%s, %d, %s, %s, %s, %s, %d, , \n" % (self.tag, volume, Templates.ninja_price_metric(self.tag), key_handler.key, csv_tags, "all", key_handler.ninja_value))
+
+    def write_as_csv_aggr(self, f, aggr, tagset):
+        csv_tags = "|".join(tagset)
+        volume = 1
+        f.write("%s, %d, %s, %s, %s, %s, , , \n" % (self.tag, volume, Templates.econ_price_metric(self.tag, volume), "Group", csv_tags, aggr))
+
+    def write_as_csv_no_filters(self, f):
+        for key_handler in self.key_handlers.values():
+            key_handler.write_as_csv_no_filters(f)
+
+    def write_as_csv(self, f):
+        if not Resources._MARKET_TYPES[self.tag]["include_in_strat_csv"]:
+            return
+
+        variant_tag_set = set([key.split(":")[0] 
+            for key_handler in self.key_handlers.values()
+            for variant in key_handler.variants.values()
+            for key in variant.get_combined_tags()])
+
+        relevant_groups = Resources._MARKET_TYPES[self.tag]["grouping_stack_tags"]
+        aggr_groups = variant_tag_set.difference(relevant_groups)
+        csv_aggr_tags = "|".join(aggr_groups)
+
+        tag_options_map = {}
+        for key in relevant_groups:
+            for key_handler in self.key_handlers.values():
+                for variant in key_handler.variants.values():
+                    for tag in variant.get_combined_tags():
+                        k, v = tag.split(":")
+                        if k in relevant_groups:
+                            if k not in tag_options_map:
+                                tag_options_map[k] = set()
+                            tag_options_map[k].add(tag)
+
+        tag_options_list = list(tag_options_map.values())
+        unpacked_tagsets = unpack_tagsets(tag_options_list)
+
+        for tagset in unpacked_tagsets:
+            self.write_as_csv_aggr(f, csv_aggr_tags, tagset)
+
+        if Resources._MARKET_TYPES[self.tag]["grouping_ninja"]:
+            self.write_as_csv_ninja(f)
+
+        self.write_as_csv_no_filters(f)
 
     def print(self):
         for _, key_handler in self.key_handlers.items():
@@ -450,7 +529,7 @@ class Economy_Gem_Summary(Economy_Tag_Summary):
             self.key_handlers[key].update_ninja(ninja_item)
 
     def parse_ninja_raws(self, raw):
-        return [(Market_Handler.sanitize_key(n['name']),n) for n in raw['lines']]
+        return [(Market_Handler.sanitize(n['name']),n) for n in raw['lines']]
 
     def submit_temple_returns(self, temple_price):
         for key, handler in self.key_handlers.items():
@@ -472,7 +551,7 @@ class Economy_Gem_Summary(Economy_Tag_Summary):
             value_map = {
                 alt_name: {
                         "weight": weight, 
-                        "value": self.key_handlers[Market_Handler.sanitize_key(((alt_name + " ") if alt_name != "Superior" else "") + base_name)].get_fallback_value("1"),
+                        "value": self.key_handlers[Market_Handler.sanitize(((alt_name + " ") if alt_name != "Superior" else "") + base_name)].get_fallback_value("1"),
                     }
                 for alt_name, weight in alts.items()
             }
@@ -486,8 +565,6 @@ class Economy_Gem_Summary(Economy_Tag_Summary):
                 profit = hit_return - value_map[hit_alt]["value"] - used_lens_value
                 if profit > 50:
                     statsd.gauge(Templates._METRIC_STRAT_LENS_GEM, profit, tags=["hit_quality:%s" % hit_alt, "base_name:%s" % base_name])
-                    print(base_name, value_map)
-                    print(base_name, hit_alt, profit)
 
     def run_strats(self, curr_summary, misc_summary):
         # print(misc_summary.key_handlers)
@@ -496,8 +573,8 @@ class Economy_Gem_Summary(Economy_Tag_Summary):
         if dory_value:
             self.submit_temple_returns(dory_value)
         self.submit_vaal_returns(1)
-        prime_value = curr_summary.key_handlers['prime regrading lens'].ninja_value if 'prime regrading lens' in misc_summary.key_handlers else 0
-        secondary_value = curr_summary.key_handlers['secondary regrading lens'].ninja_value if 'secondary regrading lens' in misc_summary.key_handlers else 0
+        prime_value = curr_summary.key_handlers['prime regrading lens'].ninja_value if 'prime regrading lens' in curr_summary.key_handlers else 0
+        secondary_value = curr_summary.key_handlers['secondary regrading lens'].ninja_value if 'secondary regrading lens' in curr_summary.key_handlers else 0
         if prime_value and secondary_value:
             self.submit_lens_returns(prime_value, secondary_value)
 
@@ -510,12 +587,15 @@ class Economy_Misc_Summary(Economy_Tag_Summary):
 
     def update(self):
         try:
-            self.update_with_poestack(self.trade_api_querier.get_temple_gem3(self.currency_summary))
-        except:
+            postackified = self.trade_api_querier.get_temple_gem3(self.currency_summary)
+            self.update_with_poestack(postackified)
+        except Exception as e: 
+            print(e)
             pass
         try:
             self.update_with_poestack(self.trade_api_querier.get_temple_corru3(self.currency_summary))
-        except:
+        except Exception as e: 
+            print(e)
             pass
         
         # self.print()
@@ -567,3 +647,18 @@ class Economy_Store:
             self.report()
             self.run_gem_metrics()
             # print(self.groups['gem'].key_handlers['anomalous lightning strike'].print())
+
+    def write_as_csv(self, f):
+        for tag, summary in self.groups.items():
+            summary.write_as_csv(f)
+
+
+    def dump(self):
+        self.update()
+        with open("poedata_table.csv", 'w') as file:
+            file.write("Stratname, placeholder\n")
+            file.write("Runs, 0\n")
+            file.write("Runs Per Hour, 0\n")
+            file.write("Type, Volume, Metric, Key, Tag Filters, Aggr Tags, Value, Spend, Return\n")
+            self.write_as_csv(file)
+
